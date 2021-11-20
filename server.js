@@ -12,10 +12,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(routes);
 
-//get api paths
-// app.get('/api/notes', (req, res) => {
-//     res.status(200).json(db);
-// });
 
 app.listen(PORT, () =>
     console.log(`App listening at http://localhost:${PORT} 🚀`)
