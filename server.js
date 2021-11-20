@@ -3,7 +3,7 @@ const express = require('express');
 const routes = require('./routes/routes.js')
 
 //port
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 //express setup
 const app = express();
