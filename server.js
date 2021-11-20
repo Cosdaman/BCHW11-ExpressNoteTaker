@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const db = require('./db/db.json')
 
 const PORT = 3001;
 
@@ -14,8 +15,12 @@ app.get('/', (req, res) =>
 );
 
 app.get('/notes', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/notes.html'))
+    res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
+
+app.get('/api/notes', (req, res) => {
+    res.status(200).json(db);
+});
 
 app.listen(PORT, () =>
     console.log(`App listening at http://localhost:${PORT} 🚀`)
