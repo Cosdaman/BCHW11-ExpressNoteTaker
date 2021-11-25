@@ -33,7 +33,9 @@ Router.post('/api/notes', (req, res) => {
 
 });
 
-
-
+Router.delete('/api/notes/:id', function (req, res) {
+    console.log(req.params)
+    res.send('Got a DELETE')
+})
 
 module.exports = Router;
