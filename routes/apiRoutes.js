@@ -17,43 +17,35 @@ Router.post('/api/notes', (req, res) => {
         {
             db = JSON.parse(data);
             db.push(req.body)
-            let i = 1;
-            db.forEach(element => {
-                element.id = i;
-                i++;
-            });
-            db = JSON.stringify(db)
-            fs.writeFile(
-                "./db/db.json",
-                db,
-                (err) => err ? console.error(err) : res.send("ok")
-            )
+            updateDB(db,res)
         }
     });
-
 });
 
 Router.delete('/api/notes/:id', function (req, res) {
-    console.log(req.params)
     let db = [];
     fs.readFile('./db/db.json', (err, data) => {
         if (err) console.log(err);
         {
             db = JSON.parse(data);
             db.splice(req.params.id, 1);
-            let i = 1;
-            db.forEach(element => {
-                element.id = i;
-                i++;
-            });
-            db = JSON.stringify(db)
-            fs.writeFile(
-                "./db/db.json",
-                db,
-                (err) => err ? console.error(err) : res.send("ok")
-            )
+            updateDB(db,res);
         }
     });
 })
+
+function updateDB(db,res) {
+    let i = 1;
+    db.forEach(element => {
+        element.id = i;
+        i++;
+    });
+    db = JSON.stringify(db)
+    fs.writeFile(
+        "./db/db.json",
+        db,
+        (err) => err ? console.error(err) : res.send("ok")
+    )
+}
 
 module.exports = Router;
