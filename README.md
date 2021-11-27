@@ -2,12 +2,16 @@
 
 ## Description  
 
-
+This is a note taker built using Javascript and deployed on Heroku.
 
 ## Technologies Used  
 
-
-
+- HTML
+- CSS
+- Javascript
+- Bootstrap
+- NodeJS
+- ExpressJS
 
 ## Contact Information  
 
