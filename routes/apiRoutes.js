@@ -28,7 +28,7 @@ Router.delete('/api/notes/:id', function (req, res) {
         if (err) console.log(err);
         {
             db = JSON.parse(data);
-            db.splice(req.params.id, 1);
+            db.splice(req.params.id-1, 1);
             updateDB(db,res);
         }
     });
