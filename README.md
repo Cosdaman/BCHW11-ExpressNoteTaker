@@ -25,5 +25,8 @@ Link: https://bchw11expressnotetaker.herokuapp.com/
 
 ## Screenshot/s  
 
+Landing Page:
+![image](https://user-images.githubusercontent.com/3162991/143664947-b535d556-b062-47eb-b16f-fe75c697eca2.png)
 
-
+Notes Page:
+![image](https://user-images.githubusercontent.com/3162991/143664940-b8cb6973-0a3d-4318-8f71-299adb81e4c6.png)
